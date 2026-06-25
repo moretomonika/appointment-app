@@ -52,7 +52,7 @@ const NavBar = () => {
         }
         <img onClick={()=>setShowMenu(true)} className='w-6 md:hidden' src={assets.menu_icon}/>
         {/**mobile menu */}
-        <div className={ `  ${showMenu? 'fixed w-full' :  'h-0 w-0'} md:hidden right-0 top-0 bottom-0 overflow:hidden bg-white transition` }>
+        <div className={ `  ${showMenu? 'fixed w-full' :  'h-0 w-0'} md:hidden right-0 top-0 bottom-0 overflow:hidden bg-white transition-all` }>
           <div className='flex items-center justify-between px-5 py-6'>
             <img className='w-36' src={assets.logo} alt="" />
             <img className='w-7'onClick={()=>setShowMenu(false)} src={assets.cross_icon} alt="" />
@@ -61,14 +61,14 @@ const NavBar = () => {
             <NavLink  onClick={()=>setShowMenu(false)} to="/">
               <p className='px-4 py-2 rounded inline-block'>Home</p>
             </NavLink>
-            <NavLink  onClick={()=>setShowMenu(false)} to='/doctors'>
+            <NavLink onClick={()=>setShowMenu(false)} to='/doctors'>
               <p className='px-4 py-2 rounded inline-block'> All Doctors</p> 
             </NavLink>
-            <NavLink  onClick={()=>setShowMenu(false)} to='/about'>
+            <NavLink onClick={()=>setShowMenu(false)} to='/about'>
               <p className='px-4 py-2 rounded inline-block' > About</p>
             </NavLink>
-            <NavLink   onClick={()=>setShowMenu(false)} to='/contact'>
-              <p className='px-4 py-2 rounded inline-block'>Contact</p>
+            <NavLink  onClick={()=>setShowMenu(false)} to='/contact'>
+              <p className='px-4 py-2 rounded inline-block'>CONTACT</p>
             </NavLink>
           </ul>
         </div>

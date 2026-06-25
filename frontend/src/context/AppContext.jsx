@@ -13,7 +13,16 @@ const AppContextProvider=(props)=>{
     const backendUrl=import.meta.env.VITE_BACKEND_URL
     const [doctors,setDoctors]=useState(doctorsData)
     const [token,setToken]=useState(localStorage.getItem('token')?localStorage.getItem('token'):'')
-    const [userData,setUserData]=useState(false)
+    //const [userData,setUserData]=useState(false)
+    const [userData, setUserData] = useState({
+        name: 'John Doe',
+        email: 'john@example.com',
+        phone: '(415) 555-0132',
+        image: '',
+        address: { line1: '123 Main St', line2: 'New York, USA' },
+        gender: 'Male',
+        dob: '1995-01-15'
+    })
     
     const getDoctorsData=async()=>{
         try{
