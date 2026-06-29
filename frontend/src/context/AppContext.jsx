@@ -4,17 +4,17 @@ import {toast} from 'react-toastify'
 import axios from 'axios'
 import { useState } from "react";
 import { useEffect } from "react";
-import { doctors as doctorsData } from '../assets/assets'
+//import { doctors as doctorsData } from '../assets/assets'
 export const AppContext= createContext()
 
 const AppContextProvider=(props)=>{
 
     const currencySymbol='$'
     const backendUrl=import.meta.env.VITE_BACKEND_URL
-    const [doctors,setDoctors]=useState(doctorsData)
+    const [doctors,setDoctors]=useState([])
     const [token,setToken]=useState(localStorage.getItem('token')?localStorage.getItem('token'):'')
-    //const [userData,setUserData]=useState(false)
-    const [userData, setUserData] = useState({
+    const [userData,setUserData]=useState(false)
+    /*const [userData, setUserData] = useState({
         name: 'John Doe',
         email: 'john@example.com',
         phone: '(415) 555-0132',
@@ -22,7 +22,7 @@ const AppContextProvider=(props)=>{
         address: { line1: '123 Main St', line2: 'New York, USA' },
         gender: 'Male',
         dob: '1995-01-15'
-    })
+    })*/
     
     const getDoctorsData=async()=>{
         try{
